@@ -35,7 +35,7 @@ $ git git@github.com:zeroziwei/the-missing-semester.git
 
 > git remote -v 查看远程主机
 
-![](/home/orange/图片/2022-07-21 23-50-49 的屏幕截图.png)
+![](VerSionControl.assets/2022-07-21 23-50-49 的屏幕截图.png)
 
 ### 三、 仓库的三大区域
 
@@ -48,7 +48,7 @@ $ git git@github.com:zeroziwei/the-missing-semester.git
 
 > git config -l 查看配置信息
 
-![img](https://doc.shiyanlou.com/document-uid310176labid9805timestamp1548755913772.png)
+![img](VerSionControl.assets/document-uid310176labid9805timestamp1548755913772.png)
 
 完成后，系统自动生成 Git 的配置文件，就是主目录中的隐藏文件 `.gitconfig` 
 
@@ -83,7 +83,7 @@ nothing to commit, working directory clean
 
 > git commit -m "Message"
 
-![](/home/orange/snap/typora/57/.config/Typora/typora-user-images/image-20220722004948367.png)
+![](VerSionControl.assets/image-20220722004948367.png)
 
 
 
@@ -95,7 +95,7 @@ nothing to commit, working directory clean
 
 > git branch -avv  查看全部分支信息：
 
-![image-20220722005311071](/home/orange/snap/typora/57/.config/Typora/typora-user-images/image-20220722005311071.png)
+![image-20220722005311071](VerSionControl.assets/image-20220722005311071.png)
 
 > git push 推送 需要下载的就是SSH的版本
 
@@ -107,7 +107,7 @@ nothing to commit, working directory clean
 >
 > `HEAD^` 表示撤销一次提交，`HEAD^^` 表示撤销两次提交，撤销 n 次可以简写为 `HEAD~n`。
 
-软退回一个提交后执行 `git branch -avv` 命令查看分支信息：![image-20220722011405648](/home/orange/snap/typora/57/.config/Typora/typora-user-images/image-20220722011405648.png)
+软退回一个提交后执行 `git branch -avv` 命令查看分支信息：![image-20220722011405648](VerSionControl.assets/image-20220722011405648.png)
 
 从版本号可知 提交到远程服务器版本的并没有发生回退，本地的版本回退了。
 
@@ -121,25 +121,25 @@ nothing to commit, working directory clean
 
 执行 `git status` 和 `git branch -avv` 查看仓库状态和分支状态
 
-![image-20220722013029818](/home/orange/snap/typora/57/.config/Typora/typora-user-images/image-20220722013029818.png)
+![image-20220722013029818](VerSionControl.assets/image-20220722013029818.png)
 
-![image-20220722013059979](/home/orange/snap/typora/57/.config/Typora/typora-user-images/image-20220722013059979.png)
+![image-20220722013059979](VerSionControl.assets/image-20220722013059979.png)
 
 > git push -f 
 
 可以看到本地仓库的 master 分支与远程仓库的 origin/master 分支在提交版本上有了冲突，又叫做提交时间线分叉。因为刚才的提交操作不是基于远程仓库 origin/master 分支的最新提交版本，而是撤回了一个版本。这种情况下也是可以将本地 master 分支推送到远程仓库的，需要加一个选项 `-f` ，它是 `--force` 的简写，这就是强制推送:
 
-![image-20220722013203398](/home/orange/snap/typora/57/.config/Typora/typora-user-images/image-20220722013203398.png)
+![image-20220722013203398](VerSionControl.assets/image-20220722013203398.png)
 
 执行 `git branch -avv` 看一下分支信息，本地 master 与远程 master 的版本号一致，
 
-![image-20220722013340453](/home/orange/snap/typora/57/.config/Typora/typora-user-images/image-20220722013340453.png)
+![image-20220722013340453](VerSionControl.assets/image-20220722013340453.png)
 
 ![image-20220722013411867](/home/orange/snap/typora/57/.config/Typora/typora-user-images/image-20220722013411867.png)
 
 > git reflog 
 
-![image-20220722013546874](/home/orange/snap/typora/57/.config/Typora/typora-user-images/image-20220722013546874.png)
+![image-20220722013546874](VerSionControl.assets/image-20220722013546874-16588041892692.png)
 
 > git relog --hard [版本号] / HEAD@{num}
 
@@ -155,14 +155,14 @@ nothing to commit, working directory clean
 
 ​	终端执行 `ssh-keygen` 命令按几次回车生成公私钥，公私钥存放在主目录下的隐藏目录 `.ssh` 中的两个文件中：
 
-![img](https://doc.shiyanlou.com/document-uid310176labid9816timestamp1548756454421.png)
+![img](VerSionControl.assets/document-uid310176labid9816timestamp1548756454421.png)
 
 将 `~/.ssh/id_rsa.pub` 文件中的公钥内容复制出来，实验环境中可以使用右侧工具栏中的剪切板复制：
 
-![img](https://doc.shiyanlou.com/document-uid310176labid9816timestamp1548756470163.png)
+![img](VerSionControl.assets/document-uid310176labid9816timestamp1548756470163.png)
 
 然后在网页上添加公钥：
 
-![img](https://doc.shiyanlou.com/document-uid310176labid9816timestamp1548756492545.png)
+![img](VerSionControl.assets/document-uid310176labid9816timestamp1548756492545.png)
 
-![img](https://doc.shiyanlou.com/document-uid310176labid9816timestamp1548756503765.png)
+![img](VerSionControl.assets/document-uid310176labid9816timestamp1548756503765.png)
