@@ -28,6 +28,7 @@ Linux 之父 Linus 在 1991 年创建开源的 Linux 操作系统之后，多年
 
 ```shell
 $ git clone https://github.com/libgit2/libgit2 mylibgit
+$ git git@github.com:zeroziwei/the-missing-semester.git
 ```
 
 当我们在 GitHub 上创建一个仓库时，同时生成了仓库的默认主机名 origin，并创建了默认分支 master。GitHub 可以看成是免费的 Git 服务器，在 GitHub 上创建仓库，会自动生成一个仓库地址，主机就是指代这个仓库，主机名就等于这个仓库地址。克隆一个 GitHub 仓库（也叫远程仓库）到本地，本地仓库则会自动关联到这个远程仓库，执行 `git remote -v` 命令可以查看本地仓库所关联的远程仓库信息：
@@ -147,3 +148,21 @@ nothing to commit, working directory clean
 ### 为 Git 命令设置别名
 
 有些命令的重复度极高，比如 `git status` 和 `git branch -avv` 等，Git 可以对这些命令设置别名，以便简化对它们的使用，设置别名的命令是 `git config --global alias.[别名] [原命令]`，如果原命令中有选项，需要加引号。别名是自定义的，可以随意命名，设置后，原命令和别名具有同等作用。操作如下：
+
+### 添加 SSH 关联授权
+
+​	在 2021 年 8 月 GitHub 更新后，**已经不再允许使用账户密码操作 GitHub**，必须使用 **SSH 密钥**登陆。所以我们可以在系统中创建 SSH 公私钥，并将公钥放到 GitHub 指定位置。如此操作即可生成 GitHub 账户对于当前系统中的 Git 授权。
+
+​	终端执行 `ssh-keygen` 命令按几次回车生成公私钥，公私钥存放在主目录下的隐藏目录 `.ssh` 中的两个文件中：
+
+![img](https://doc.shiyanlou.com/document-uid310176labid9816timestamp1548756454421.png)
+
+将 `~/.ssh/id_rsa.pub` 文件中的公钥内容复制出来，实验环境中可以使用右侧工具栏中的剪切板复制：
+
+![img](https://doc.shiyanlou.com/document-uid310176labid9816timestamp1548756470163.png)
+
+然后在网页上添加公钥：
+
+![img](https://doc.shiyanlou.com/document-uid310176labid9816timestamp1548756492545.png)
+
+![img](https://doc.shiyanlou.com/document-uid310176labid9816timestamp1548756503765.png)
